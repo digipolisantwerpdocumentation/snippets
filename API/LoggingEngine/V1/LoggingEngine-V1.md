@@ -58,8 +58,8 @@
 |  |  | IPAddress | string | optional | 63.25.149.53<br />IP-address of the user |
 |  | Message |  |  |  |  |
 |  |  | Type | string | optional | invoice:updated |
-|  |  | Content | json | non-null | { id: 4856, oldvalue: “something”, newvalue: ...} |
-|  |  | Format | string | optional | json<br />format used b |
+|  |  | Content | <span style="color:Red;">ApplicationLogging: json<br />SystemLogging: string  </span>| non-null | <span style="color:Red;">ApplicationLogging:\{ id: 4856, oldvalue: “something”, newvalue: ...\}<br />SystemLogging: "Something went terribly wrong" </span>|
+|  |  | Format | string | optional | json<br />format used by content |
 |  |
 
 
@@ -284,11 +284,9 @@ namespace tmp
                                     'IPAddress': '127.0.0.1'
                                 },
                                 'Message': {
-                                    'Type': 'This is my message',
+                                    'Type': 'messagetype:deleting',
                                     'Format': 'json',
-                                    'Content': {
-
-                                    }
+                                    'Content': '{this my message}'
                                 },
                                 'Level': 1
                             }
@@ -359,11 +357,9 @@ var jsonobj = {
                         IPAddress: "127.0.0.1"
                     },
                     Message: {
-                        Type: "This is my message",
+                        Type: "messagetype:deleting",
                         Format: "json",
-                        Content: {
-
-                        }
+                        Content: "{this is my message}"
                     },
                     Level: 1
                 }
