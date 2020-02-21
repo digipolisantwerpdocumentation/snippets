@@ -1,25 +1,25 @@
 ![LoggingEngine](./assets/ApplicationLogging.png)
 
-#LoggingEngine
+# LoggingEngine
 
 ### Table of contents:
 
 * [General Info](https://acpaas.digipolis.be/nl/product/logging-engine)
 * [User Manual](https://wiki.antwerpen.be/ACPAAS/index.php/Logging_Engine)
-* [Structure Logging Message](#StructureMessageLogging) 
-* ApplicationLogging
+* V1 - [Structure Logging Message](#StructureMessageLogging) 
+* V1 - ApplicationLogging
  	* [Swagger](https://api-store-o.antwerpen.be/#/org/acpaas/api/applicationlogging/v1/documentation)
  	* code examples
- 		* [C#](#ApplicationLoggingCodeExampleCSharp) 
- 		* [NodeJs](#ApplicationLoggingCodeExampleNodeJs)
- * SystemLogging
+ 		* [C#](#V1ApplicationLoggingCodeExampleCSharp) 
+ 		* [NodeJs](#V1ApplicationLoggingCodeExampleNodeJs)
+ * V1 - SystemLogging
  	* [Swagger](https://api-store-o.antwerpen.be/#/org/acpaas/api/systemlogging/v1/documentation) 
  	* code examples
- 		* [C#](#SystemLoggingCodeExampleCSharp) 
- 		* [NodeJs](#SystemLoggingCodeExampleNodeJs)
+ 		* [C#](#V1SystemLoggingCodeExampleCSharp) 
+ 		* [NodeJs](#V1SystemLoggingCodeExampleNodeJs)
 
 ***
-* <a name="StructureMessageLogging"/>Structure Message Logging
+* <a name="StructureMessageLogging"/>V1 - Structure Message Logging
 
 |Fieldname|  |  | type |  required| example and explanation |
 ------|------|------|-----|------|-----|
@@ -66,7 +66,7 @@
 
 
 ***
-* <a name="ApplicationLoggingCodeExampleCSharp">ApplicationLogging Code example C#
+* <a name="V1ApplicationLoggingCodeExampleCSharp"> V1 - ApplicationLogging Code example C#
 
 ```csharp
 using System;
@@ -153,7 +153,7 @@ namespace tmp
 }
 ```
 
-* <a name="ApplicationLoggingCodeExampleNodeJs"/>ApplicationLogging Code example NodeJs
+* <a name="V1ApplicationLoggingCodeExampleNodeJs"/>V1 - ApplicationLogging Code example NodeJs
 
 ```javascript
 var request = require('request');
@@ -228,7 +228,7 @@ request(options, function (error, response) {
 });
 ```
 
-* <a name="SystemLoggingCodeExampleCSharp">SystemLogging Code example C#
+* <a name="V1SystemLoggingCodeExampleCSharp">V1 - SystemLogging Code example C#
 ```csharp
 using System;
 using RestSharp;
@@ -313,7 +313,7 @@ namespace tmp
     }
 }
 ```
-* <a name="SystemLoggingCodeExampleNodeJs">SystemLogging Code example NodeJs
+* <a name="V1SystemLoggingCodeExampleNodeJs">V1 - SystemLogging Code example NodeJs
 ```javascript
 var request = require('request');
 var jsonobj = {
