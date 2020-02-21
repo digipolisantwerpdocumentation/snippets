@@ -58,7 +58,7 @@
 |  |  | IPAddress | string | optional | 63.25.149.53<br />IP-address of the user |
 |  | Message |  |  |  |  |
 |  |  | Type | string | optional | invoice:updated |
-|  |  | Content | <span style="color:Red;">ApplicationLogging: json<br />SystemLogging: string  </span>| non-null | <span style="color:Red;">ApplicationLogging:\{ id: 4856, oldvalue: “something”, newvalue: ...\}<br />SystemLogging: "Something went terribly wrong" </span>|
+|  |  | Content | <b style="color:red;">ApplicationLogging: json<br />SystemLogging: string  </b>| non-null | <b style="color:red;">ApplicationLogging:\{ id: 4856, oldvalue: “something”, newvalue: ...\}<br />SystemLogging: "Something went terribly wrong" </b>|
 |  |  | Format | string | optional | json<br />format used by content |
 |  |
 
