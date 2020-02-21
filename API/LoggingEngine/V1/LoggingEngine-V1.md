@@ -1,4 +1,4 @@
-![LoggingEngine](./assets/ApplicationLogging.png)
+![LoggingEngine](../assets/ApplicationLogging.png)
 
 # LoggingEngine
 
