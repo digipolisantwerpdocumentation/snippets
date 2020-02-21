@@ -26,22 +26,22 @@
 |Header|  |  |  |  |  |
 | Index |  |  | string | required | index-app-invoices |
 | Timestamp |  |  | datetime | required | 2012-01-01T12:00:00Z |
-| Version |  |  | string | required | 1 <br/ > version of loggingengine |
+| Version |  |  | string | required | 1 <br /> version of loggingengine |
 | Correlation |  |  |  |  |  |
-|  | CorrelationId |  | string | required | 95f419b1-a11f-474b-92bb-dd17fb9d70ef <br/ > unique identifier of request |
+|  | CorrelationId |  | string | required | 95f419b1-a11f-474b-92bb-dd17fb9d70ef <br /> unique identifier of request |
 |  | Application |  |  |  |  |
-|  |  | ApplicationId | string | required | ac59caba-724d-4005-ac76-6ac5f1e10a9c <br/ > unique identifier of application starting the request |
-|  |  | ApplicationName | string | required | PaymentApp<br/ >display-friendly name of requesting application|
+|  |  | ApplicationId | string | required | ac59caba-724d-4005-ac76-6ac5f1e10a9c <br /> unique identifier of application starting the request |
+|  |  | ApplicationName | string | required | PaymentApp<br />display-friendly name of requesting application|
 |  | Instance |  |  |  |  |
-|  |  | InstanceId | string | required | 0062cdae-3d86-4d1b-9309-44ae8d209a92<br/ >unique identifier of application-instance starting the request |
-|  |  | InstanceName | string | required | PaymentApp-instance-1<br/ >display-friendly name of application instance starting the request |
+|  |  | InstanceId | string | required | 0062cdae-3d86-4d1b-9309-44ae8d209a92<br />unique identifier of application-instance starting the request |
+|  |  | InstanceName | string | required | PaymentApp-instance-1<br />display-friendly name of application instance starting the request |
 | Source |  |  |  |  |  |
 |  | Application |  |  |  |  |
-|  |  | ApplicationId | string | required | 1df240eb-7d0e-42c0-9bb3-f22ad30fd353<br/ >unique identifier of application that is logging |
-|  |  | ApplicationName | string | required | InvoiceApp<br/ >display-friendly nameof application that is logging  |
+|  |  | ApplicationId | string | required | 1df240eb-7d0e-42c0-9bb3-f22ad30fd353<br />unique identifier of application that is logging |
+|  |  | ApplicationName | string | required | InvoiceApp<br />display-friendly nameof application that is logging  |
 |  | Instance |  |  |  |  |
-|  |  | InstanceId | string | required | e75ab07e-e96c-462c-962c-393ecfdc5726<br/ >  |
-|  |  | InstanceName | string | required | InvoiceApp-instance-3<br/ >display-friendly name of instance of the application that is logging  |
+|  |  | InstanceId | string | required | e75ab07e-e96c-462c-962c-393ecfdc5726<br />  |
+|  |  | InstanceName | string | required | InvoiceApp-instance-3<br />display-friendly name of instance of the application that is logging  |
 |  | Component |  |  |  |  |
 |  |  | ComponentId | string | optional | 9da00df0-6bb3-4b22-be90-3f3bc70329ad<br />unique identifier of component in the application that is logging |
 |  |  | ComponentName | string | optional | InvoiceUpdater<br />display-friendly name of the component in the application that is logging |
