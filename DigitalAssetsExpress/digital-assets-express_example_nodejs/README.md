@@ -125,7 +125,7 @@ async getUrls(assetId, mediafileId, userId) {
 
 Similar endpoints are available to get only the mediafile download URL or thumbnail URL.
 
-Warning: The thumbnail URL might not be instantly available. Please refer to the "Thumbnail generation" section below for more information.
+Warning: The thumbnail URL might not be instantly available. Please refer to the "Note on thumbnail generation" section below for more information.
 
 ### Delete file
 
@@ -180,7 +180,7 @@ Delete response (204)
 GetQuota response (200): {"appQuotaMb":"0","appDiskspaceUsedMb":"4843","quotaAvailableMb":"-4843"}
 ```
 
-## Thumbnail generation
+## Note on thumbnail generation
 
 Thumbnail generation is an async process. This means the thumbnail URL might not be instantly available. Some considerations when using `generateThumbnail` when uploading files (`POST /api/mediafiles`):
 
