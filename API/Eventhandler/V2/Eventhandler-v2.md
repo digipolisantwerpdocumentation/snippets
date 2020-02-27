@@ -5,7 +5,7 @@
 
 The Event Handler can be used to publish and receive events that can be used by other applications.
 
-### Table of contents:
+### links:
 
 <!--ts-->
    * [Publish event](#publish-event)
@@ -14,10 +14,9 @@ The Event Handler can be used to publish and receive events that can be used by 
    * [Subscribe to event](#subscribe-to-an-event)
       * [Create Subscription](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
       * [Code Example](#recieve-event-code-example)
+   * [General info](https://acpaas.digipolis.be/nl/product/event-handler-engine)
+   * [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
 <!--te-->
-
-- [General info](https://acpaas.digipolis.be/nl/product/event-handler-engine)
-- [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
 
 ## Publish event
 **API documentation:** [Swagger](https://acpaas.digipolis.be/nl/product/event-handler-engine/v2.0.0/api-event-handler-v-2/about#/Publish)
@@ -65,7 +64,7 @@ Create an subscription in the Eventhandler that points to your application: [Use
 
 The Event Handler will post data to an endpoint.
 
-#### Recieve event code example:
+#### Receive event code example:
 ```javascript
 // Express route with bodyparser expected
 
