@@ -30,11 +30,11 @@ namespace DigitalAssetsExpressExample
             requestContent.Add(streamContent);
 
             requestContent.Add(new StringContent(userId), "userId");
-            // The userId property can be used to specify the user who uploaded the file.
-            // The same userId is also needed when requesting URLs for or deleting an uploaded file.
+            // The userId property can be used to specify the user who uploaded the file
+            // The same userId is also needed when requesting URLs for or deleting an uploaded file
 
             requestContent.Add(new StringContent(generateThumbnail.ToString().ToLower()), "generateThumbnail");
-            // More information about thumbnail generation can be found in the README.
+            // More information about thumbnail generation can be found in the README
 
             requestContent.Add(new StringContent(returnThumbnailUrl.ToString().ToLower()), "returnThumbnailUrl");
 

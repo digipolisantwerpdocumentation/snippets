@@ -17,6 +17,18 @@ These code snippets and console app show how to upload, get and delete a file us
 
 These snippets and other examples are available in [DigitalAssetsExpressService.cs](DigitalAssetsExpressService.cs).
 
+First configure the base URL and API key:
+
+```csharp
+public DigitalAssetsExpressService(string baseAddress, string apiKey)
+{
+    // Use IHttpClientFactory (AddHttpClient) in real implementations
+    _httpClient = new HttpClient();
+    _httpClient.BaseAddress = new Uri(baseAddress);
+    _httpClient.DefaultRequestHeaders.Add("ApiKey", apiKey);
+}
+```
+
 ### Upload file
 
 `POST /api/mediafiles`
@@ -51,11 +63,11 @@ public async Task<JObject> Upload(Stream file, string fileName, string userId, b
     requestContent.Add(streamContent);
 
     requestContent.Add(new StringContent(userId), "userId");
-    // The userId property can be used to specify the user who uploaded the file.
-    // The same userId is also needed when requesting URLs for or deleting an uploaded file.
+    // The userId property can be used to specify the user who uploaded the file
+    // The same userId is also needed when requesting URLs for or deleting an uploaded file
 
     requestContent.Add(new StringContent(generateThumbnail.ToString().ToLower()), "generateThumbnail");
-    // More information about thumbnail generation can be found in the README.
+    // More information about thumbnail generation can be found in the README
 
     requestContent.Add(new StringContent(returnThumbnailUrl.ToString().ToLower()), "returnThumbnailUrl");
 
@@ -159,7 +171,7 @@ public async Task Delete(string assetId, string userId)
 ### Start example
 
 ```
-dotnet run
+dotnet run -- --api-key "<YOUR-API-KEY>"
 ```
 
 Or using Docker:
@@ -167,23 +179,22 @@ Or using Docker:
 ```
 docker build --tag digital-assets-express_example_dotnetcore .
 
-docker run --interactive --tty digital-assets-express_example_dotnetcore
+docker run digital-assets-express_example_dotnetcore --api-key "<YOUR-API-KEY>"
 ```
 
-Enter your API when requested. You can also change the defaults in [Config.cs](Config.cs).
+You can change the default base URL and API key in [Config.cs](Config.cs).
 
 ### Example output
 
 ```
 Starting Digital Assets Express example app
-Enter your API key (<YOUR-API-KEY>): <some API key>
 Using API key "<some API key>"
 Upload response (200): {"assetId":"k2GSEskTlKj9SxSAgFxlaOmg","mediafileId":"T2CIrSQPUHOiLDDGRSuJCSNM","thumbnailGenerated":true,"fileName":"image.png","links":[{"rel":"download","href":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png"}]}
 GetUrl response (200): {"mediafileDownloadUrl":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png"}
 GetUrls response (200): {"mediafileDownloadUrl":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png","mediaFileViewUrl":"https://media-a.antwerpen.be/media/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png","thumbnailUrl":"https://media-a.antwerpen.be/media/15/T/TXRmhQF8RZFTT2QMbeFcllLl/TXRmhQF8RZFTT2QMbeFcllLl.jpg"}
 GetThumbnailUrl response (200): {"thumbnailUrl":"https://media-a.antwerpen.be/media/15/T/TXRmhQF8RZFTT2QMbeFcllLl/TXRmhQF8RZFTT2QMbeFcllLl.jpg"}
-GetQuota response (200): {"appQuotaMb":"0","appDiskspaceUsedMb":"4843","quotaAvailableMb":"-4843"}
 Delete response (204)
+GetQuota response (200): {"appQuotaMb":"0","appDiskspaceUsedMb":"4843","quotaAvailableMb":"-4843"}
 ```
 
 ## Thumbnail generation
