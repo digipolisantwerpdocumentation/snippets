@@ -60,7 +60,7 @@ sendEvent('[TOPIC]', '{ datakey: "datavalue"}');
 ```
 ## Subscribe to an event
 
-Create an subscription in the Eventhandler that points to your application: [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
+Create an subscription in the Eventhandler that points to your application: [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*.
 
 The Event Handler will post data to an endpoint.
 
