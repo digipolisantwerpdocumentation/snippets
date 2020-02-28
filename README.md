@@ -5,7 +5,9 @@
 
 <!--ts-->
    * **Event Handler**
-     * [V2](API/Eventhandler/V2/Eventhandler-v2.md)
+     * [V2](eventhandler/v2/README.md)
    * **Notifications Engine**
-     * [V2](API/Notification_Engine/V2/Notification-Engine-v2.md)
+     * [V2](notif-orchestrator/v2/README.md)
+   * **assetsexpress**
+     * [V2](assetsexpress/v1/README.md)
 <!--te-->
