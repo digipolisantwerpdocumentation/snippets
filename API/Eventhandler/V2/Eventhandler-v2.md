@@ -5,7 +5,7 @@
 
 The Event Handler can be used to publish and receive events that can be used by other applications.
 
-### links:
+### Links:
 
 <!--ts-->
    * [Publish event](#publish-event)

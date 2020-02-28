@@ -3,7 +3,7 @@
 The Notification Engine is a generic engine to send notification.
 
 
-### Table of contents:
+### Links:
 
 <!--ts-->
    * [Available channels](#available-channels)
@@ -12,7 +12,6 @@ The Notification Engine is a generic engine to send notification.
    * [Message to topic](#send-a-message-to-a-topic)
    * [Create to topic](#send-a-message-to-a-topic)
    * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/gettingStarted)
-   * [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
 <!--te-->
 
 
