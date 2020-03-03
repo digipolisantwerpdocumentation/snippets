@@ -19,4 +19,5 @@ COPY --from=build-env /app/out/ .
 
 EXPOSE 80
 
-CMD ["dotnet", "DigitalAssetsExpressExample.dll"]
+ENTRYPOINT ["dotnet", "DigitalAssetsExpressExample.dll"]
+CMD []

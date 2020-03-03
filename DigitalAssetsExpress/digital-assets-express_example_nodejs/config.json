@@ -1,0 +1,4 @@
+{
+    "apiKey": "<YOUR-API-KEY>",
+    "baseAddress": "https://api-gw-a.antwerpen.be/acpaas/assetsexpress/v1"
+}
