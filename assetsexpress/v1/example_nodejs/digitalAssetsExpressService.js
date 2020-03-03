@@ -1,8 +1,8 @@
-const rp = require("request-promise-native");
+const requestPromise = require("request-promise-native");
 
 class DigitalAssetsExpressService {
     constructor(config) {
-        this.requestClient = rp.defaults({
+        this.requestClient = requestPromise.defaults({
             baseUrl: config.baseAddress,
             headers: { "ApiKey": config.apiKey },
             resolveWithFullResponse: true

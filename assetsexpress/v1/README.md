@@ -38,7 +38,7 @@ public DigitalAssetsExpressService(string baseAddress, string apiKey)
 ```js
 class DigitalAssetsExpressService {
     constructor(config) {
-        this.requestClient = rp.defaults({
+        this.requestClient = requestPromise.defaults({
             baseUrl: config.baseAddress,
             headers: { "ApiKey": config.apiKey },
             resolveWithFullResponse: true
