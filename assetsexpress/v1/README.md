@@ -1,4 +1,4 @@
-# Digital Assets Express examples (.NET Core)
+# Digital Assets Express examples
 
 The Digital Assets Express API provides a simplified API to access the Digital Assets engine.
 
@@ -15,9 +15,13 @@ These code snippets and console app show how to upload, get and delete a file us
 
 ## Code snippets
 
-These snippets and other examples are available in [DigitalAssetsExpressService.cs](DigitalAssetsExpressService.cs).
+These snippets and other examples are available in [DigitalAssetsExpressService.cs (.NET Core)](example_dotnetcore/DigitalAssetsExpressService.cs) and [digitalAssetsExpressService.js (Node.js)](example_nodejs/digitalAssetsExpressService.js).
 
 First configure the base URL and API key:
+
+### Setup
+
+**.NET Core:**
 
 ```csharp
 public DigitalAssetsExpressService(string baseAddress, string apiKey)
@@ -26,6 +30,20 @@ public DigitalAssetsExpressService(string baseAddress, string apiKey)
     _httpClient = new HttpClient();
     _httpClient.BaseAddress = new Uri(baseAddress);
     _httpClient.DefaultRequestHeaders.Add("ApiKey", apiKey);
+}
+```
+
+**Node.js:**
+
+```js
+class DigitalAssetsExpressService {
+    constructor(config) {
+        this.requestClient = rp.defaults({
+            baseUrl: config.baseAddress,
+            headers: { "ApiKey": config.apiKey },
+            resolveWithFullResponse: true
+        });
+    }
 }
 ```
 
@@ -49,7 +67,9 @@ Response:
 }
 ```
 
-Example implementation:
+#### Example implementation
+
+**.NET Core:**
 
 ```csharp
 public async Task<JObject> Upload(Stream file, string fileName, string userId, bool generateThumbnail = false, bool returnThumbnailUrl = false, string thumbnailGeneratedCallbackUrl = null, int? thumbnailHeight = null)
@@ -100,6 +120,49 @@ public async Task<JObject> Upload(Stream file, string fileName, string userId, b
 }
 ```
 
+**Node.js:**
+
+```js
+async upload(file, fileName, userId, generateThumbnail = false, returnThumbnailUrl = false, thumbnailGeneratedCallbackUrl = null, thumbnailHeight = null) {
+    const formData = {
+        userId,
+        // The userId property can be used to specify the user who uploaded the file
+        // The same userId is also needed when requesting URLs for or deleting an uploaded file
+
+        file: {
+            value: file,
+            options: {
+                filename: fileName,
+                contentType: "application/octet-stream"
+            }
+        },
+        generateThumbnail: generateThumbnail.toString(),
+        // More information about thumbnail generation can be found in the README
+
+        returnThumbnailUrl: returnThumbnailUrl.toString()
+    };
+
+    if (thumbnailGeneratedCallbackUrl != null) {
+        formData.thumbnailGeneratedCallbackUrl = thumbnailGeneratedCallbackUrl;
+    }
+
+    if (thumbnailHeight != null) {
+        formData.thumbnailHeight = thumbnailHeight;
+    }
+
+    const response = await this.requestClient.post("api/mediafiles", { formData });
+
+    console.log(`Upload response (${response.statusCode}): ${response.body}`);
+    // Upload response (200): {"assetId":"ygGahxsdQQNIRdhRRXvawXw9","mediafileId":"V2mKYbfTIgIRecHCslDq9pAj","thumbnailGenerated":true,"fileName":"image.png","links":[{"rel":"download","href":"https://media-a.antwerpen.be/download/15/V/V2mKYbfTIgIRecHCslDq9pAj/image.png"}]}
+
+    // Warning: The resulting download URL is permanent URL which is accessible by anyone. It might be necessary to conceal this URL from end users, depending on your use case.
+    // It's possible to configure your application to only generate temporary URLs, or to setup Access Control Lists for your files using the Digital Assets API (not available through Digital Assets Express).
+    // Please contact the ACPaaS team for more information if needed.
+
+    return JSON.parse(response.body);
+}
+```
+
 ### Get URLs
 
 `GET /api/assets/{assetId}/mediafiles/{mediafileId}/urls?userid={userId}`
@@ -114,7 +177,13 @@ Response:
 }
 ```
 
-Example implementation:
+Similar endpoints are available to get only the mediafile download URL or thumbnail URL.
+
+Warning: The thumbnail URL might not be instantly available. Please refer to the "Note on thumbnail generation" section below for more information.
+
+#### Example implementation
+
+**.NET Core:**
 
 ```csharp
 public async Task<JObject> GetUrls(string assetId, string mediafileId, string userId)
@@ -134,15 +203,26 @@ public async Task<JObject> GetUrls(string assetId, string mediafileId, string us
 }
 ```
 
-Similar endpoints are available to get only the mediafile download URL or thumbnail URL.
+**Node.js:**
 
-Warning: The thumbnail URL might not be instantly available. Please refer to the "Note on thumbnail generation" section below for more information.
+```js
+async getUrls(assetId, mediafileId, userId) {
+    const response = await this.requestClient.get(`api/assets/${assetId}/mediafiles/${mediafileId}/urls?userid=${userId}`);
+
+    console.log(`GetUrls response (${response.statusCode}): ${response.body}`);
+    // GetUrls response (200): {"mediafileDownloadUrl":"https://media-a.antwerpen.be/download/15/V/V2mKYbfTIgIRecHCslDq9pAj/image.png","mediaFileViewUrl":"https://media-a.antwerpen.be/media/15/V/V2mKYbfTIgIRecHCslDq9pAj/image.png","thumbnailUrl":"https://media-a.antwerpen.be/media/15/u/uWJeOWYoHGPDaQTWFkNatm66/uWJeOWYoHGPDaQTWFkNatm66.jpg"}
+
+    return JSON.parse(response.body);
+}
+```
 
 ### Delete file
 
 `DELETE /api/assets/{assetId}?userid={userId}`
 
-Example implementation:
+#### Example implementation
+
+**.NET Core:**
 
 ```csharp
 public async Task Delete(string assetId, string userId)
@@ -161,40 +241,15 @@ public async Task Delete(string assetId, string userId)
 }
 ```
 
-## Example app
+**Node.js:**
 
-### Prerequisites
+```js
+async delete(assetId, userId) {
+    const response = await this.requestClient.delete(`api/assets/${assetId}?userid=${userId}`);
 
-- .NET Core 3.0 SDK or Docker to build and run the application.
-- API key of an application which has a contract with the Digital Assets Express API in ACC.
-
-### Start example
-
-```
-dotnet run -- --api-key "<YOUR-API-KEY>"
-```
-
-Or using Docker:
-
-```
-docker build --tag digital-assets-express_example_dotnetcore .
-
-docker run digital-assets-express_example_dotnetcore --api-key "<YOUR-API-KEY>"
-```
-
-You can change the default base URL and API key in [Config.cs](Config.cs).
-
-### Example output
-
-```
-Starting Digital Assets Express example app
-Using API key "<some API key>"
-Upload response (200): {"assetId":"k2GSEskTlKj9SxSAgFxlaOmg","mediafileId":"T2CIrSQPUHOiLDDGRSuJCSNM","thumbnailGenerated":true,"fileName":"image.png","links":[{"rel":"download","href":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png"}]}
-GetUrl response (200): {"mediafileDownloadUrl":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png"}
-GetUrls response (200): {"mediafileDownloadUrl":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png","mediaFileViewUrl":"https://media-a.antwerpen.be/media/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png","thumbnailUrl":"https://media-a.antwerpen.be/media/15/T/TXRmhQF8RZFTT2QMbeFcllLl/TXRmhQF8RZFTT2QMbeFcllLl.jpg"}
-GetThumbnailUrl response (200): {"thumbnailUrl":"https://media-a.antwerpen.be/media/15/T/TXRmhQF8RZFTT2QMbeFcllLl/TXRmhQF8RZFTT2QMbeFcllLl.jpg"}
-Delete response (204)
-GetQuota response (200): {"appQuotaMb":"0","appDiskspaceUsedMb":"4843","quotaAvailableMb":"-4843"}
+    console.log(`Delete response (${response.statusCode})`);
+    // Delete response (204)
+}
 ```
 
 ## Note on thumbnail generation
@@ -205,7 +260,7 @@ Thumbnail generation is an async process. This means the thumbnail URL might not
 - An alternative is using `thumbnailGeneratedCallbackUrl` where your application provides an API endpoint which is called when the thumbnail has been generated. However, this endpoint will not be called when the async thumbnail generation is temporarily delayed by about one minute. This is a known limitation of the Digital Assets Express API.
 - So your best option might be to poll the API to get the thumbnail URL (`GET /api/assets/{assetId}/thumbnail/url`).
 
-An example for `thumbnailGeneratedCallbackUrl` is not provided in this application. You should pass the URL to a POST endpoint which accepts the following JSON payload:
+An example for `thumbnailGeneratedCallbackUrl` is not provided in these code snippets. You should pass the URL to a POST endpoint which accepts the following JSON payload:
 
 ```json
 {
