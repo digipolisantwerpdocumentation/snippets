@@ -2,7 +2,7 @@
 
 The Digital Assets Express API provides a simplified API to access the Digital Assets engine.
 
-These code snippets and console app show how to upload, get and delete a file using the Digital Assets Express API.
+These code snippets show how to upload, get and delete a file using the Digital Assets Express API.
 
 ## Links
 
@@ -13,13 +13,18 @@ These code snippets and console app show how to upload, get and delete a file us
   - [API Store ACC](https://api-store-a.antwerpen.be/#/org/inuits/api/assets/v1/documentation)
   - [ACPaaS Wiki page](https://wiki.antwerpen.be/ACPAAS/index.php/Digital_Asset_express_engine)
 
+## Example apps
+
+- [.NET Core](example_dotnetcore)
+- [Node.js](example_nodejs)
+
 ## Code snippets
 
 These snippets and other examples are available in [DigitalAssetsExpressService.cs (.NET Core)](example_dotnetcore/DigitalAssetsExpressService.cs) and [digitalAssetsExpressService.js (Node.js)](example_nodejs/digitalAssetsExpressService.js).
 
-First configure the base URL and API key:
-
 ### Setup
+
+First configure the base URL and API key:
 
 **.NET Core:**
 
