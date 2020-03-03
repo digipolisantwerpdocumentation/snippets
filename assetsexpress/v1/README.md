@@ -4,6 +4,28 @@ The Digital Assets Express API provides a simplified API to access the Digital A
 
 These code snippets show how to upload, get and delete a file using the Digital Assets Express API.
 
+## Table of contents
+
+<!--
+Regenerate table of contents with:
+
+npm install --global markdown-toc
+markdown-toc -i --maxdepth 3 assetsexpress/v1/README.md
+-->
+
+<!-- toc -->
+
+- [Links](#links)
+- [Example apps](#example-apps)
+- [Code snippets](#code-snippets)
+  * [Setup](#setup)
+  * [Upload file](#upload-file)
+  * [Get URLs](#get-urls)
+  * [Delete file](#delete-file)
+- [Note on thumbnail generation](#note-on-thumbnail-generation)
+
+<!-- tocstop -->
+
 ## Links
 
 - [Digital Assets engine on ACPaaS Portal](https://acpaas.digipolis.be/nl/product/digital-assets-engine)
