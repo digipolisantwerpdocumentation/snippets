@@ -83,7 +83,7 @@ class DigitalAssetsExpressService {
     }
 
     async getQuota() {
-        const response = await this.requestClient.get(`apps/quota`);
+        const response = await this.requestClient.get("apps/quota");
 
         console.log(`GetQuota response (${response.statusCode}): ${response.body}`);
         // GetQuota response (200): {"appQuotaMb":"0","appDiskspaceUsedMb":"4843","quotaAvailableMb":"-4843"}

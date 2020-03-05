@@ -1,4 +1,4 @@
-# Digital Assets Express example app (Node.js)
+# Digital Assets Express API example app (Node.js)
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ You can change the default base URL and API key in [config.json](config.json).
 ## Example output
 
 ```
-Starting Digital Assets Express example app
+Starting Digital Assets Express API example app
 Using API key "97fc3c32-d76d-431a-a5a2-0c9732a26c6e"
 Upload response (200): {"assetId":"ygGahxsdQQNIRdhRRXvawXw9","mediafileId":"V2mKYbfTIgIRecHCslDq9pAj","thumbnailGenerated":true,"fileName":"image.png","links":[{"rel":"download","href":"https://media-a.antwerpen.be/download/15/V/V2mKYbfTIgIRecHCslDq9pAj/image.png"}]}
 GetUrl response (200): {"mediafileDownloadUrl":"https://media-a.antwerpen.be/download/15/V/V2mKYbfTIgIRecHCslDq9pAj/image.png"}

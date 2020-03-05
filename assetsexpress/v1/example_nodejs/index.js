@@ -6,7 +6,7 @@ const config = require("./config.json");
 
 (async () => {
     try {
-        console.log("Starting Digital Assets Express example app");
+        console.log("Starting Digital Assets Express API example app");
 
         const apiKey = argv.apiKey || config.apiKey;
 

@@ -1,4 +1,4 @@
-# Digital Assets Express example app (.NET Core)
+# Digital Assets Express API example app (.NET Core)
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ You can change the default base URL and API key in [Config.cs](Config.cs).
 ## Example output
 
 ```
-Starting Digital Assets Express example app
+Starting Digital Assets Express API example app
 Using API key "<some API key>"
 Upload response (200): {"assetId":"k2GSEskTlKj9SxSAgFxlaOmg","mediafileId":"T2CIrSQPUHOiLDDGRSuJCSNM","thumbnailGenerated":true,"fileName":"image.png","links":[{"rel":"download","href":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png"}]}
 GetUrl response (200): {"mediafileDownloadUrl":"https://media-a.antwerpen.be/download/15/T/T2CIrSQPUHOiLDDGRSuJCSNM/image.png"}
