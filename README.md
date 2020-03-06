@@ -9,5 +9,9 @@
    * **Event Handler**
      * [v2](eventhandler/v2/README.md)
    * **Notifications Engine**
-     * [v2](notif-orchestrator/v2/README.md)
+     * Notifications orchestrator 	
+       * [v2](notif-orchestrator/v2/README.md)
+     * Notifications preferences
+       * [v2](notif-preferences/v2/README.md)
+
 <!--te-->
