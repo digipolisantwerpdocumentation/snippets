@@ -1,6 +1,6 @@
 # Notification Engine
 
-The Notification Engine is a generic engine to send notification.
+The Notification Engine is a generic engine to send notifications.
 
 
 ### Links:

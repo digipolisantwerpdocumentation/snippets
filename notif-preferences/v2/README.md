@@ -1,6 +1,6 @@
 # Notification Engine: preferences
 
-The Notification Engine is a generic engine to send notification.
+The Notification Engine is a generic engine to send notifications.
 
 
 ### Links:
@@ -22,7 +22,7 @@ const correlation = require('astad-dgp-correlation');
 const uuid = require('uuid');
 
 const config = {
-        host: 'https://api-gw-a.antwerpen.be', // Dev endpoint
+        host: 'https://api-gw-o.antwerpen.be', // Dev endpoint
         baseUrl: '/ballistix/notif-preference/v2',
         apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-o.antwerpen.be/
 }
