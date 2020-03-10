@@ -131,7 +131,7 @@ namespace DigitalAssetsExpressExample
 
         public async Task<JObject> GetQuota()
         {
-            var responseMessage = await _httpClient.GetAsync($"apps/quota");
+            var responseMessage = await _httpClient.GetAsync("apps/quota");
             var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
             if (!responseMessage.IsSuccessStatusCode)

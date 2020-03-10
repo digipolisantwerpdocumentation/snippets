@@ -1,4 +1,4 @@
-# Digital Assets Express examples
+# Digital Assets Express API examples
 
 The Digital Assets Express API provides a simplified API to access the Digital Assets engine.
 
@@ -189,6 +189,8 @@ async upload(file, fileName, userId, generateThumbnail = false, returnThumbnailU
     return JSON.parse(response.body);
 }
 ```
+
+The `file` passed to `upload()` should be a buffer or a file stream. Refer to [index.js](example_nodejs/index.js) for an example using `fs.createReadStream()`.
 
 ### Get URLs
 
