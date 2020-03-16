@@ -10,7 +10,7 @@ These code snippets show how to upload, get and delete a file using the Digital 
 Regenerate table of contents with:
 
 npm install --global markdown-toc
-markdown-toc -i --maxdepth 3 assetsexpress/v1/README.md
+markdown-toc -i --maxdepth 3 README.md
 -->
 
 <!-- toc -->
