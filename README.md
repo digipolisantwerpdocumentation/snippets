@@ -15,5 +15,7 @@
        * [v2](notif-orchestrator/v2/README.md)
      * Notifications preferences
        * [v2](notif-preferences/v2/README.md)
+     * In app notification
+       * [v2](in-app-notification/v2/README.md)
 
 <!--te-->
