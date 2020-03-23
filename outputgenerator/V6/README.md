@@ -112,6 +112,7 @@ Response:
 ```
 
 Download document
+
 `POST /download?name=generated/export_2020.03.23_10.33.01.420_5851bb5b-3f2c-4183-a359-b304dd1ab834.pdf`
 
 Response: byte stream of document file
