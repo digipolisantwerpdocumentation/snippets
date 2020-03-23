@@ -15,7 +15,6 @@
        * [v2](notif-orchestrator/v2/README.md)
      * Notifications preferences
        * [v2](notif-preferences/v2/README.md)
-
 <!--te-->
-* **Logging Engine**
-	* [V1](API/LoggingEngine/V1/LoggingEngine-V1.md) 
+* **ApplicationLogging**
+	* [V1](applicationlogging/v1/README.md) 
