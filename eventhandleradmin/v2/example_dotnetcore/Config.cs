@@ -15,7 +15,7 @@ namespace EventHandlerAdminExample
         /// </summary>
         public const string AdminOwnerKey = "<ADMIN-OWNER-KEY>";
 
-        public const string Namespace = "my-namespace";
+        public const string Namespace = "code-snippets-example-namespace";
         
         public const string Topic = "my-topic";
         

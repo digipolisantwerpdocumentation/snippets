@@ -30,17 +30,14 @@ namespace EventHandlerAdminExample
                 }
 
                 await _service.CreateTopic(topicName);
-
                 await _service.CreateSubscription(topicName, subscriptionName, "http://localhost/some-subscription-endpoint");
 
-                var message = JObject.FromObject(new { someProperty = "some event message"});
-
+                var message = JObject.FromObject(new { someProperty = "some event message" });
                 await _service.Publish(topicName, message);
 
                 await _service.DeleteSubscription(subscriptionName);
-                
                 await _service.DeleteTopic(topicName);
-                
+
                 if (createNamespace)
                 {
                     await _service.DeleteNamespace(namespaceName);

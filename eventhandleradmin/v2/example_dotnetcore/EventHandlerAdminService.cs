@@ -65,7 +65,7 @@ namespace EventHandlerAdminExample
             }
 
             Console.WriteLine($"Create namespace response ({(int)responseMessage.StatusCode}): {responseContent}");
-            // Create namespace response (201): {"name":"my-namespace","owner":"myNamespaceOwnerKey","headerWhitelist":null}
+            // Create namespace response (201): {"name":"code-snippets-example-namespace","owner":"myNamespaceOwnerKey","headerWhitelist":null}
 
             return JObject.Parse(responseContent);
         }
@@ -110,7 +110,7 @@ namespace EventHandlerAdminExample
             }
 
             Console.WriteLine($"Create topic response ({(int)responseMessage.StatusCode}): {responseContent}");
-            // Create topic response (201): {"name":"my-topic","namespace":"my-namespace"}
+            // Create topic response (201): {"name":"my-topic","namespace":"code-snippets-example-namespace"}
 
             return JObject.Parse(responseContent);
         }
@@ -163,7 +163,7 @@ namespace EventHandlerAdminExample
             }
 
             Console.WriteLine($"Create subscription response ({(int)responseMessage.StatusCode}): {responseContent}");
-            // Create subscription response (201): {"name":"my-subscription","namespace":"my-namespace","owner":"mySubscriptionOwnerKey","topic":"my-topic","config":{"maxConcurrentDeliveries":1,"retries":{"firstLevelRetries":{"enabled":true,"retries":3,"onFailure":"error"},"secondLevelRetries":{"enabled":false,"retries":10,"ttl":600,"onFailure":"error"}},"push":{"pushType":"http","httpVerb":"POST","authentication":{"type":"none","kafka":{},"basic":{},"apikey":{},"oauth":{}},"url":"http://localhost/some-subscription-endpoint"},"restartAfterStop":{"enabled":false,"delayInMinutes":30}},"updated":"2020-03-23T14:15:13.982Z","created":"2020-03-23T14:15:13.983Z","status":"active"}
+            // Create subscription response (201): {"name":"my-subscription","namespace":"code-snippets-example-namespace","owner":"mySubscriptionOwnerKey","topic":"my-topic","config":{"maxConcurrentDeliveries":1,"retries":{"firstLevelRetries":{"enabled":true,"retries":3,"onFailure":"error"},"secondLevelRetries":{"enabled":false,"retries":10,"ttl":600,"onFailure":"error"}},"push":{"pushType":"http","httpVerb":"POST","authentication":{"type":"none","kafka":{},"basic":{},"apikey":{},"oauth":{}},"url":"http://localhost/some-subscription-endpoint"},"restartAfterStop":{"enabled":false,"delayInMinutes":30}},"updated":"2020-03-23T14:15:13.982Z","created":"2020-03-23T14:15:13.983Z","status":"active"}
 
             return JObject.Parse(responseContent);
         }
