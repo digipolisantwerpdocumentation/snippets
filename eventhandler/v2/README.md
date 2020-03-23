@@ -43,7 +43,7 @@ class EventHandlerService
     private readonly HttpClient _httpClient;
     private readonly string _namespace;
 
-    public EventHandlerService(string baseAddress, string apiKey, string ownerKey, string eventHandlerNamespace)
+    public EventHandlerService(string baseAddress, string apiKey, string ownerKey, string namespaceName)
     {
         // Use IHttpClientFactory (AddHttpClient) in real implementations
         _httpClient = new HttpClient();
@@ -51,7 +51,7 @@ class EventHandlerService
         _httpClient.DefaultRequestHeaders.Add("ApiKey", apiKey);
         _httpClient.DefaultRequestHeaders.Add("Owner-Key", ownerKey);
 
-        _namespace = eventHandlerNamespace;
+        _namespace = namespaceName;
     }
 
     public async Task Publish(string topic, string content)
