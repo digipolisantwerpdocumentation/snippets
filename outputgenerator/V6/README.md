@@ -1,7 +1,7 @@
 # Output Generator examples (.NET Core)
 
-The Output Generator API provides a API to generate a variety of document file based on templates and data/content files.
-Possible appliances are forms are personalized documents, lettes, mails, ...
+The Output Generator API provides a API to generate a variety of document files based on templates and data/content files.
+Possible appliances are forms, personalized documents, letters, mails, ...
 
 These code snippets and console app show how to generate a PDF from a Word-template file and download the document. This
 can be done synchronously and asynchronously.
@@ -69,7 +69,8 @@ Be aware for possible time outs or unwanted delays when you want to generate lar
 or when the output generator experiences a high amount of simultaneous requests. To avoid al these problems, 
 async document creation is preferred.
 
-Generate document with async=true
+Generate document with async=false
+
 `POST /generator/directWordGeneration`
 
 Response:
@@ -121,12 +122,13 @@ Example implementation:
 
 ### Generate PDF from Word-template (docx) ASYNCHRONOUS
 
-The document is generated asynchronously. A link for checking the generation status is provided as part of the generation result (status code 202 accepted).
+The document is generated asynchronously. A link for checking the generation status is provided as part of the generation result.
 
-Generate document with async=false
+Generate document with async=true
+
 `POST /generator/directWordGeneration`
 
-Response:
+Response (status code 202 accepted):
 
 ```json
 "/digipolis/generator/task/result/d67e8e15-77cb-4d18-9b14-d29a89023431"
@@ -138,13 +140,13 @@ Depending on the document status a different response and status code may be ret
 a 303-redirect response is provided. Be aware to disable automatic redirect! The link in the location-header doesn't provide
 a valid link to the document for the moment. The redirect/download of the document is done manually in this code snippet.
 
-Depending on the use in your code, the document check and download can be done in a seperate background process
-to benefit from this async call as for not blocking the initial request.
-Otherwise this is still a synchronous call from the perspective of the requester of your API.
+The document check and download can be done in a separate background process to benefit from this async call 
+and as for not blocking the initial request. Otherwise this is still a synchronous call from the perspective 
+of the requester of your API.
 
 `GET /generator/task/result/d67e8e15-77cb-4d18-9b14-d29a89023431`
 
-Response when document generated and ready for download (status code 303):
+Response when document is generated and ready for download (status code 303):
 
 ```json
 {
@@ -178,7 +180,7 @@ Response when document generated and ready for download (status code 303):
 }
 ```
 
-Response when failed (status code 200):
+Response when generation failed (status code 200):
 
 ```json
 {
@@ -187,6 +189,7 @@ Response when failed (status code 200):
 ```
 
 Download document
+
 `POST /download?name=generated/export_2020.03.20_14.04.56.351_d67e8e15-77cb-4d18-9b14-d29a89023431.pdf`
 
 Response: byte stream of document file

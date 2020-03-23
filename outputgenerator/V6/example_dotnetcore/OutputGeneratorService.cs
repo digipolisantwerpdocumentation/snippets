@@ -70,7 +70,7 @@ namespace OutputGeneratorExample
                 throw new Exception($"Document generation failed ({(int)response.StatusCode}): {responseContent}");
             }
 
-            Console.WriteLine($"Document generation response ({(int)response.StatusCode}): {responseContent}");
+            Console.WriteLine($"POST generate document response ({(int)response.StatusCode}): {responseContent}");
 
             var docGenerationResult = JsonConvert.DeserializeObject<DocumentGenerationResult>(responseContent, new JsonSerializerSettings());
 
@@ -120,7 +120,7 @@ namespace OutputGeneratorExample
                 throw new Exception($"Document generation failed ({(int)response.StatusCode}): {responseContent}");
             }
 
-            Console.WriteLine($"POST async document generation response ({(int)response.StatusCode}): {responseContent}");
+            Console.WriteLine($"POST async generate document response ({(int)response.StatusCode}): {responseContent}");
 
             string docReference = JsonConvert.DeserializeObject<string>(responseContent, new JsonSerializerSettings());
 
@@ -147,7 +147,7 @@ namespace OutputGeneratorExample
 
                     var statusResponseContent = await statusResponse.Content.ReadAsStringAsync();
 
-                    Console.WriteLine($"GET document status response ({(int)response.StatusCode}): {statusResponseContent}");
+                    Console.WriteLine($"GET document status response ({(int)statusResponse.StatusCode}): {statusResponseContent}");
 
                     if (statusResponse.StatusCode == System.Net.HttpStatusCode.RedirectMethod)
                     {
