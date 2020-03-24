@@ -59,8 +59,12 @@ public static class Config
 
 **Node.js:**
 
-```js
-```
+create .env file from template example.env
+start script
+
+* `npm run sync`
+* `npm run async`
+
 
 ### Generate PDF from Word-template (docx) SYNCHRONOUS
 
