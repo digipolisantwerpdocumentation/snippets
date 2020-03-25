@@ -35,7 +35,7 @@ namespace DigitalAssetsExpressExample
             }
             catch (Exception ex)
             {
-                Console.Write($"Something when wrong: {ex.Message}");
+                Console.Write($"Something went wrong: {ex.Message}");
             }
         }
     }

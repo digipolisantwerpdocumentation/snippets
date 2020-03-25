@@ -1,0 +1,9 @@
+{
+    "apiKey": "<YOUR-API-KEY>",
+    "baseAddress": "https://api-gw-a.antwerpen.be/acpaas/eventhandleradmin/v2",
+    "namespaceOwnerKey": "myNamespaceOwnerKey",
+    "subscriptionOwnerKey": "mySubscriptionOwnerKey",
+    "namespace": "code-snippets-example-namespace",
+    "topic": "my-topic",
+    "subscription": "my-subscription"
+}
