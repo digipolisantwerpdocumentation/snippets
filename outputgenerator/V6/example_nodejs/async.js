@@ -45,6 +45,11 @@ async function GeneratePDFFromWordTemplate(templateFile, dataFile) {
                 }
             );
 
+            if(response.data.status === 'Failed') {
+                clearInterval(interval);
+                console.log('Failed');
+            }
+
             if(response.status === 303) {
                 clearInterval(interval);
                 await downloadFile(response.data.uploadUri, response.data.name)
