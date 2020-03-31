@@ -1,0 +1,9 @@
+{
+  "name": "eventhandler-admin_example_nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "yargs": "^15.1.0"
+  }
+}

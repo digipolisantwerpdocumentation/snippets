@@ -1,28 +1,78 @@
 ![eventhandler](./assets/eventhandler.png)
 
-# Eventhandler
-
+# Event Handler
 
 The Event Handler can be used to publish and receive events that can be used by other applications.
 
-### Links:
+## Table of contents
 
-<!--ts-->
-   * [Publish event](#publish-event)
-      * [Swagger](https://acpaas.digipolis.be/nl/product/event-handler-engine/v2.0.0/api-event-handler-v-2/about#/Publish)
-      * [Code Example](#publish-code-example)
-   * [Subscribe to event](#subscribe-to-an-event)
-      * [Create Subscription](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
-      * [Code Example](#recieve-event-code-example)
-   * [General info](https://acpaas.digipolis.be/nl/product/event-handler-engine)
-   * [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
-<!--te-->
+<!--
+Regenerate table of contents with:
+
+npm install --global markdown-toc
+markdown-toc -i --maxdepth 3 README.md
+-->
+
+<!-- toc -->
+
+- [Links](#links)
+- [Publish event](#publish-event)
+  * [Publish code example](#publish-code-example)
+- [Subscribe to an event](#subscribe-to-an-event)
+  * [Receive event code example](#receive-event-code-example)
+
+<!-- tocstop -->
+
+## Links
+
+* [General info](https://acpaas.digipolis.be/nl/product/event-handler-engine)
+* [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*
+* [Swagger documentation](https://acpaas.digipolis.be/nl/product/event-handler-engine/v2.0.0/api-event-handler-v-2/about)
 
 ## Publish event
+
 **API documentation:** [Swagger](https://acpaas.digipolis.be/nl/product/event-handler-engine/v2.0.0/api-event-handler-v-2/about#/Publish)
 
+### Publish code example
 
-#### Publish code example:
+**.NET Core:**
+
+```csharp
+class EventHandlerService
+{
+    private readonly HttpClient _httpClient;
+    private readonly string _namespace;
+
+    public EventHandlerService(string baseAddress, string apiKey, string ownerKey, string namespaceName)
+    {
+        // Use IHttpClientFactory (AddHttpClient) in real implementations
+        _httpClient = new HttpClient();
+        _httpClient.BaseAddress = new Uri(baseAddress);
+        _httpClient.DefaultRequestHeaders.Add("ApiKey", apiKey);
+        _httpClient.DefaultRequestHeaders.Add("Owner-Key", ownerKey);
+
+        _namespace = namespaceName;
+    }
+
+    public async Task Publish(string topic, string content)
+    {
+        var responseMessage = await _httpClient.PostAsync($"namespaces/{_namespace}/topics/{topic}/publish", new StringContent(content));
+
+        if (!responseMessage.IsSuccessStatusCode)
+        {                
+            var responseContent = await responseMessage.Content.ReadAsStringAsync();
+
+            throw new Exception($"Publish failed ({(int)responseMessage.StatusCode}): {responseContent}");
+        }
+
+        Console.WriteLine($"Publish response ({(int)responseMessage.StatusCode})");
+        // Publish response (204)
+    }
+}
+```
+
+**Node.js:**
+
 ```javascript
 const request = require('request-promise-native');
 
@@ -60,11 +110,42 @@ sendEvent('[TOPIC]', '{ datakey: "datavalue"}');
 ```
 ## Subscribe to an event
 
-Create an subscription in the Eventhandler that points to your application: [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*.
+Create a subscription in the Event Handler that points to your application: [User manual](https://wiki.antwerpen.be/ACPAAS/index.php/Event-Handler_User_Manuals) *(internal access needed)*.
 
-The Event Handler will post data to an endpoint.
+The Event Handler will post data to an endpoint. Return a success status code when handling the event succeeded or a failure status code otherwise.
 
-#### Receive event code example:
+Consider securing this endpoint using authentication or a secret HTTP header, which can be set on the Event Handler subscription.
+
+### Receive event code example
+
+**.NET Core:**
+
+```csharp
+[ApiController]
+[Route("[controller]")]
+public class EventHandlerSubscriptionController : ControllerBase
+{
+    [HttpPost]
+    public IActionResult HandleEvent([FromBody] ExamplePayload payload)
+    {     
+        Console.WriteLine($"Handling event with payload ID \"{payload.Id}\"");
+
+        // Do something
+
+        // Send success
+        return NoContent();
+    }
+
+    // The payload depends on the event you're subscribing to
+    public class ExamplePayload
+    {
+        public string Id { get; set; }
+    }
+}
+```
+
+**Node.js:**
+
 ```javascript
 // Express route with bodyparser expected
 
