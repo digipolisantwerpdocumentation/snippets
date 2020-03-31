@@ -1,0 +1,19 @@
+{
+  "name": "example_nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sync.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "env-cmd": "^10.1.0",
+    "form-data": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sync": "env-cmd node sync.js",
+    "async": "env-cmd node async.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
