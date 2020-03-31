@@ -14,8 +14,11 @@
      * Notifications orchestrator 	
        * [v2](notif-orchestrator/v2/README.md)
      * Notifications preferences
-       * [v2](notif-preferences/v2/README.md)
-<!--te-->
+       * [v2](notif-preferences/v2/README.md)     
+     * Notifications sms service
+       * [v2](sms-service/v2/README.md)
+     * Notifications email service
+       * [v2](email-service/v2/README.md)<!--te-->
 * **ApplicationLogging**
 	* [V1](applicationlogging/v1/README.md) 
 * **SystemLogging**
