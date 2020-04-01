@@ -19,6 +19,8 @@
        * [v2](notif-preferences/v2/README.md)
      * In app notification
        * [v2](in-app-notification/v2/README.md)
+     * Push-Notification service
+       * [v2](push-notifications/v2/README.md)
      * Notifications sms service
        * [v2](sms-service/v2/README.md)
      * Notifications email service
