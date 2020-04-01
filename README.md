@@ -21,7 +21,10 @@
        * [v2](in-app-notification/v2/README.md)
      * Push-Notification service
        * [v2](push-notifications/v2/README.md)
-
+     * Notifications sms service
+       * [v2](sms-service/v2/README.md)
+     * Notifications email service
+       * [v2](email-service/v2/README.md)<!--te-->
 <!--te-->
 * **ApplicationLogging**
 	* [V1](applicationlogging/v1/README.md) 
