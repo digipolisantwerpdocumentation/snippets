@@ -19,6 +19,10 @@
        * [v2](notif-preferences/v2/README.md)
      * In app notification
        * [v2](in-app-notification/v2/README.md)
+     * Notifications sms service
+       * [v2](sms-service/v2/README.md)
+     * Notifications email service
+       * [v2](email-service/v2/README.md)<!--te-->
 <!--te-->
 * **ApplicationLogging**
 	* [V1](applicationlogging/v1/README.md) 
