@@ -14,9 +14,9 @@ dotnet run
 Or using Docker:
 
 ```
-docker build --tag output-generator_example_dotnetcore .
+docker build --tag digitalvault_example_dotnetcore .
 
-docker run --interactive --tty output-generator_example_dotnetcore
+docker run --interactive --tty digitalvault_example_dotnetcore
 ```
 
 You can change the default base URL and OAuth config-keys in [Config.cs](Config.cs).
