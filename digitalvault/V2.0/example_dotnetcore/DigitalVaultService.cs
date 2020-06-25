@@ -14,7 +14,7 @@ namespace DigitalVaultExample
     {
         public DigitalVaultService(IServiceProvider serviceProvider, IMemoryCache memoryCache)
         {
-            serviceProvider = _serviceProvider;
+            _serviceProvider = serviceProvider;
             _memoryCache = memoryCache;
         }
 

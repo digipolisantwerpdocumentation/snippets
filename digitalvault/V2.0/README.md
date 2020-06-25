@@ -103,7 +103,7 @@ Request:
 }
 ```
 
-Response (status code 200 accepted):
+Response (status code 200 ok):
 
 ```json
 {
