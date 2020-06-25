@@ -35,7 +35,7 @@ markdown-toc -i --maxdepth 3 employee/v3/README.md
 
 ## Code snippets
 
-These snippets and other examples are available in [EmployeeService.cs (.NET Core)](example_dotnetcore/EmployeeService.cs) 
+These snippets and other examples are available in [EmployeeService.cs (.NET Core)](example_dotnetcore/ServiceAgent/EmployeeService.cs) 
 and [employeeService.js (Node.js)](example_nodejs/EmployeeService.js).
 
 ### Setup
@@ -103,7 +103,7 @@ Response (status code 200 ok):
 ```
 
 Example implementation:
-- .net core: see method GetEmployee in [EmployeeService.cs](example_dotnetcore/EmployeeService.cs).
+- .net core: see method GetEmployee in [EmployeeService.cs](example_dotnetcore/ServiceAgent/EmployeeService.cs).
 
 
 ### Search employees
@@ -179,4 +179,4 @@ Response (status code 200 ok):
 ```
 
 Example implementation:
-- .net core: see method SearchEmployees in [EmployeeService.cs](example_dotnetcore/EmployeeService.cs).
+- .net core: see method SearchEmployees in [EmployeeService.cs](example_dotnetcore/ServiceAgent/EmployeeService.cs).
