@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - .NET Core 3.1 SDK or Docker to build and run the application.
-- OAuth client-id en client-secret key of an application which has a contract with the Digital Vault 2.0 API in ACC.
+- OAuth client-id and client-secret key of an application which has a contract with the Digital Vault 2.0 API in ACC.
 
 ## Start example
 
@@ -19,7 +19,7 @@ docker build --tag digitalvault_example_dotnetcore .
 docker run --interactive --tty digitalvault_example_dotnetcore
 ```
 
-You can change the default base URL and OAuth config-keys in [Config.cs](Config.cs).
+You can change the default base URL and other config-keys in [Config.cs](Config.cs).
 
 ## Example output
 
