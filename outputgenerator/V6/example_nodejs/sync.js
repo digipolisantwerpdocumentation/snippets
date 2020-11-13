@@ -13,8 +13,8 @@ async function GeneratePDFFromWordTemplate(templateFile, dataFile) {
         const formData = new FormData();
         formData.append("resultType", "pdf");
         formData.append("async", 'false');
-        formData.append("data", fs.createReadStream(dataFileFilePath), { knownLength: fs.statSync(dataFileFilePath).size });
-        formData.append("wordTemplateData", fs.createReadStream(templateFilePath), { knownLength: fs.statSync(templateFilePath).size });
+        formData.append("data", fs.createReadStream(dataFileFilePath), dataFile);
+        formData.append("wordTemplateData", fs.createReadStream(templateFilePath), templateFile);
 
         // Add api key to headers
         const headers = {
