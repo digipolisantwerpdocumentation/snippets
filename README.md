@@ -17,7 +17,7 @@
    * **Event Handler Admin**
      * [v2](eventhandleradmin/v2/README.md)
    * **Notifications Engine**
-     * Notifications orchestrator 	
+     * Notifications orchestrator
        * [v2](notif-orchestrator/v2/README.md)
      * Notifications preferences
        * [v2](notif-preferences/v2/README.md)
@@ -31,11 +31,13 @@
        * [v2](email-service/v2/README.md)<!--te-->
    * **Output Generator**
      * [v6](outputgenerator/V6/README.md)
+   * **WCM Proxy**
+     * [v3](wcm-proxy/v3/README.md)
 <!--te-->
 * **ApplicationLogging**
-	* [V1](applicationlogging/v1/README.md) 
+	* [V1](applicationlogging/v1/README.md)
 * **SystemLogging**
-	* [V1](systemlogging/v1/README.md) 
+	* [V1](systemlogging/v1/README.md)
 
 ## Contributing
 
