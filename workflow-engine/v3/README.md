@@ -1,8 +1,8 @@
-#  workflow enigne
+#  Workflow enigne
 
-De Workflow engine is een REST API (gebaseerd op Flowable) waarmee in BPMN getekende processen 'executable' kunnen worden gemaakt. 
+De Workflow engine is een REST API (gebaseerd op Flowable) waarmee in BPMN getekende processen 'executable' kunnen worden gemaakt.
 
-De engine biedt een platform voor workflow en Business Process Management (BPM) voor ontwikkelaars, systeemadmins en business users. De component implementeert typische constructies zoals gateways, gebruikerstaken, scripttaken, servicetaken, timers, errors,… Ook monitoring van de processen is mogelijk via de API. 
+De engine biedt een platform voor workflow en Business Process Management (BPM) voor ontwikkelaars, systeemadmins en business users. De component implementeert typische constructies zoals gateways, gebruikerstaken, scripttaken, servicetaken, timers, errors,… Ook monitoring van de processen is mogelijk via de API.
 
 Een gebruiker tekent zijn proces in een grafische modelleringsomgeving, de XML wordt vervolgens ingebracht als een procesdefinitie in de engine en vanaf dat moment is het proces beschikbaar en kunnen instanties geïnitieerd worden.
 
