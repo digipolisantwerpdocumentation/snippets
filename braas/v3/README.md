@@ -39,7 +39,7 @@ markdown-toc -i --maxdepth 3 README.md
 
 ## Code snippets
 
-These snippets and other examples are available in [BraasService.cs (.NET Core)](example_dotnetcore/BraasService.cs) and [braasService.js (Node.js)](example_nodejs/braasService.js).
+These snippets are available in [BraasService.cs (.NET Core)](example_dotnetcore/BraasService.cs) and [braasService.js (Node.js)](example_nodejs/braasService.js).
 
 ### Setup
 
@@ -48,16 +48,26 @@ First configure the base URL and API key:
 **.NET Core:**
 
 ```csharp
-public BraasService(string baseAddress, string apiKey, string jwt)
+private readonly HttpClient _httpClient;
+
+public BraasService(string baseAddress, string apiKey)
 {
     // Use IHttpClientFactory (AddHttpClient) in real implementations
     _httpClient = new HttpClient();
     _httpClient.BaseAddress = new Uri(baseAddress);
     _httpClient.DefaultRequestHeaders.Add("ApiKey", apiKey);
+}
 
-    if (jwt != null)
+private Task<HttpResponseMessage> GetAsync(string uri, string jwt)
+{
+    using (var requestMessage = new HttpRequestMessage(HttpMethod.Get, uri))
     {
-        _httpClient.DefaultRequestHeaders.Add("Dgp-Authorization-For", $"Bearer {jwt}");
+        if (jwt != null)
+        {
+            requestMessage.Headers.Add("Dgp-Authorization-For", $"Bearer {jwt}");
+        }
+
+        return _httpClient.SendAsync(requestMessage);
     }
 }
 ```
@@ -67,13 +77,11 @@ public BraasService(string baseAddress, string apiKey, string jwt)
 ```js
 class BraasService {
     constructor(config) {
-        const headers = {
-            ApiKey: config.apiKey,
-        };
-
         this.axiosInstance = axios.create({
             baseURL: config.baseAddress,
-            headers,
+            headers: {
+                ApiKey: config.apiKey,
+            },
         });
     }
 
@@ -121,9 +129,9 @@ Response:
 **.NET Core:**
 
 ```csharp
-public async Task<JObject> GetApplication(string applicationId)
+public async Task<JObject> GetApplication(string applicationId, string jwt)
 {
-    var responseMessage = await _httpClient.GetAsync($"applications/{applicationId}");
+    var responseMessage = await GetAsync($"applications/{applicationId}", jwt);
     var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
     if (!responseMessage.IsSuccessStatusCode)
@@ -183,9 +191,9 @@ Response:
 **.NET Core:**
 
 ```csharp
-public async Task<JObject> GetApplicationRoles(string applicationId)
+public async Task<JObject> GetApplicationRoles(string applicationId, string jwt)
 {
-    var responseMessage = await _httpClient.GetAsync($"applications/{applicationId}/roles");
+    var responseMessage = await GetAsync($"applications/{applicationId}/roles", jwt);
     var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
     if (!responseMessage.IsSuccessStatusCode)
@@ -247,9 +255,9 @@ Response:
 **.NET Core:**
 
 ```csharp
-public async Task<JObject> GetRoleTeams(string roleId)
+public async Task<JObject> GetRoleTeams(string roleId, string jwt)
 {
-    var responseMessage = await _httpClient.GetAsync($"roles/{roleId}/teams");
+    var responseMessage = await GetAsync($"roles/{roleId}/teams", jwt);
     var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
     if (!responseMessage.IsSuccessStatusCode)
@@ -321,9 +329,9 @@ Response:
 **.NET Core:**
 
 ```csharp
-public async Task<JObject> GetTeamSubjects(string teamId)
+public async Task<JObject> GetTeamSubjects(string teamId, string jwt)
 {
-    var responseMessage = await _httpClient.GetAsync($"teams/{teamId}/subjects");
+    var responseMessage = await GetAsync($"teams/{teamId}/subjects", jwt);
     var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
     if (!responseMessage.IsSuccessStatusCode)

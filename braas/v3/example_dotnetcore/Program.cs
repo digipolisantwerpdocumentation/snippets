@@ -13,12 +13,12 @@ namespace BraasExample
             {
                 Console.WriteLine("Starting Braas example app");
 
-                _service = new BraasService(Config.BaseAddress, Config.ApiKey, Config.Jwt);
+                _service = new BraasService(Config.BaseAddress, Config.ApiKey);
 
-                var application = await _service.GetApplication(Config.ApplicationId);
-                var roles = await _service.GetApplicationRoles(Config.ApplicationId);
-                var teams = await _service.GetRoleTeams(roles["roles"].First.Value<string>("id"));
-                var subjects = await _service.GetTeamSubjects(teams["teams"].First.Value<string>("id"));
+                var application = await _service.GetApplication(Config.ApplicationId, Config.Jwt);
+                var roles = await _service.GetApplicationRoles(Config.ApplicationId, Config.Jwt);
+                var teams = await _service.GetRoleTeams(roles["roles"].First.Value<string>("id"), Config.Jwt);
+                var subjects = await _service.GetTeamSubjects(teams["teams"].First.Value<string>("id"), Config.Jwt);
             }
             catch (Exception ex)
             {

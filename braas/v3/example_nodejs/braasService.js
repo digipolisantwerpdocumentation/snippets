@@ -2,13 +2,11 @@ const axios = require("axios");
 
 class BraasService {
     constructor(config) {
-        const headers = {
-            ApiKey: config.apiKey,
-        };
-
         this.axiosInstance = axios.create({
             baseURL: config.baseAddress,
-            headers,
+            headers: {
+                ApiKey: config.apiKey,
+            },
         });
     }
 

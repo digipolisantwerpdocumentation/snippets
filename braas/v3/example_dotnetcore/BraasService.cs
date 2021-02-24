@@ -11,22 +11,30 @@ namespace BraasExample
     {
         private readonly HttpClient _httpClient;
 
-        public BraasService(string baseAddress, string apiKey, string jwt)
+        public BraasService(string baseAddress, string apiKey)
         {
             // Use IHttpClientFactory (AddHttpClient) in real implementations
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(baseAddress);
             _httpClient.DefaultRequestHeaders.Add("ApiKey", apiKey);
+        }
 
-            if (jwt != null)
+        private Task<HttpResponseMessage> GetAsync(string uri, string jwt)
+        {
+            using (var requestMessage = new HttpRequestMessage(HttpMethod.Get, uri))
             {
-                _httpClient.DefaultRequestHeaders.Add("Dgp-Authorization-For", $"Bearer {jwt}");
+                if (jwt != null)
+                {
+                    requestMessage.Headers.Add("Dgp-Authorization-For", $"Bearer {jwt}");
+                }
+
+                return _httpClient.SendAsync(requestMessage);
             }
         }
 
-        public async Task<JObject> GetApplication(string applicationId)
+        public async Task<JObject> GetApplication(string applicationId, string jwt)
         {
-            var responseMessage = await _httpClient.GetAsync($"applications/{applicationId}");
+            var responseMessage = await GetAsync($"applications/{applicationId}", jwt);
             var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -40,9 +48,9 @@ namespace BraasExample
             return JObject.Parse(responseContent);
         }
 
-        public async Task<JObject> GetApplicationRoles(string applicationId)
+        public async Task<JObject> GetApplicationRoles(string applicationId, string jwt)
         {
-            var responseMessage = await _httpClient.GetAsync($"applications/{applicationId}/roles");
+            var responseMessage = await GetAsync($"applications/{applicationId}/roles", jwt);
             var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -56,9 +64,9 @@ namespace BraasExample
             return JObject.Parse(responseContent);
         }
 
-        public async Task<JObject> GetRoleTeams(string roleId)
+        public async Task<JObject> GetRoleTeams(string roleId, string jwt)
         {
-            var responseMessage = await _httpClient.GetAsync($"roles/{roleId}/teams");
+            var responseMessage = await GetAsync($"roles/{roleId}/teams", jwt);
             var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
             if (!responseMessage.IsSuccessStatusCode)
@@ -72,9 +80,9 @@ namespace BraasExample
             return JObject.Parse(responseContent);
         }
 
-        public async Task<JObject> GetTeamSubjects(string teamId)
+        public async Task<JObject> GetTeamSubjects(string teamId, string jwt)
         {
-            var responseMessage = await _httpClient.GetAsync($"teams/{teamId}/subjects");
+            var responseMessage = await GetAsync($"teams/{teamId}/subjects", jwt);
             var responseContent = await responseMessage.Content.ReadAsStringAsync();
 
             if (!responseMessage.IsSuccessStatusCode)
