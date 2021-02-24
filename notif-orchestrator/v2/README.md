@@ -12,7 +12,7 @@ The Notification Engine is a generic engine to send notifications.
 * [Example app .net core](#example-app-net-core)
 * [Code snippets NodeJs](#code-snippets-nodejs)
     - [Message to topic](#send-a-message-to-a-topic)
-    - [Create to topic](#send-a-message-to-a-topic)
+    - [Create a topic](#create-a-topic)
 * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/gettingStarted)
 <!--te-->
 

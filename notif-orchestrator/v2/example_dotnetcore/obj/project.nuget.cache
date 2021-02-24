@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "03r86WQ1F+RTz8gLYOR4DRFMPt5Tmmik+lu9Q2QVvhY+mXF90WltyrqLjADtLbRdOXPNSXN6NCx4SBznDwvgTg==",
+  "success": true,
+  "projectFilePath": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnetcore\\NotificationOrchestrator.Example.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.2\\microsoft.extensions.configuration.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.2\\microsoft.extensions.configuration.abstractions.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.2\\microsoft.extensions.configuration.binder.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.2\\microsoft.extensions.dependencyinjection.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.2\\microsoft.extensions.dependencyinjection.abstractions.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.http\\3.1.2\\microsoft.extensions.http.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.logging\\3.1.2\\microsoft.extensions.logging.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.2\\microsoft.extensions.logging.abstractions.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.options\\3.1.2\\microsoft.extensions.options.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.2\\microsoft.extensions.primitives.3.1.2.nupkg.sha512",
+    "C:\\Users\\rc01707\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
