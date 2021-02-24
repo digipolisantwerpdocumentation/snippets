@@ -6,14 +6,14 @@ The Notification Engine is a generic engine to send notifications.
 ### Links:
 
 <!--ts-->
-   * [Available channels](#available-channels)
-   * [Setup](#setup)
-   * [Admin panel](#notification-engine-admin)
-   * [Example app .net core](#example-app-net-core)
-   * [Code snippets NodeJs](#code-snippets-nodejs)
+* [Available channels](#available-channels)
+* [Setup](#setup)
+* [Admin panel](#notification-engine-admin)
+* [Example app .net core](#example-app-net-core)
+* [Code snippets NodeJs](#code-snippets-nodejs)
     - [Message to topic](#send-a-message-to-a-topic)
     - [Create to topic](#send-a-message-to-a-topic)
-   * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/gettingStarted)
+* [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/gettingStarted)
 <!--te-->
 
 
