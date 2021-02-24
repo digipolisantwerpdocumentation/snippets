@@ -9,8 +9,10 @@ The Notification Engine is a generic engine to send notifications.
    * [Available channels](#available-channels)
    * [Setup](#setup)
    * [Admin panel](#notification-engine-admin)
-   * [Message to topic](#send-a-message-to-a-topic)
-   * [Create to topic](#send-a-message-to-a-topic)
+   * [Example app .net core](#example-app-net-core)
+   * [Code snippets NodeJs](#code-snippets-nodejs)
+    - [Message to topic](#send-a-message-to-a-topic)
+    - [Create to topic](#send-a-message-to-a-topic)
    * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/gettingStarted)
 <!--te-->
 
@@ -32,13 +34,32 @@ Create a contract with the orchestrator & follow the security setup to gain acce
 
 
 ## Notification Engine Admin
-Here you can see the send messages, preferences on your tenant. (You will first have to request permissions to gain access to this panel & send a message to make your tenant visible).
+Here you can see the sent messages and preferences on your tenant. (You will first have to request permissions to gain access to this panel & send a message to make your tenant visible).
 
 [Admin panel](https://notif-admin-o.antwerpen.be/) (dev)
 
 
+## Example app .net core
 
-## Send a message to a topic:
+Code snippets for sending a notification and creating a topic are available in the sample app: [NotificationOrchestratorService.cs (.NET Core)](example_dotnetcore/NotificationOrchestratorService.cs)
+
+### Setup
+
+First configure the base URL and API key in Config.cs:
+
+**.NET Core:**
+
+```csharp
+public static class Config
+    {
+        public static string ApiKey = "<YOUR-API-KEY>";
+
+        public static string BaseAddress = "https://api-gw-o.antwerpen.be/ballistix/notif-pref-admin/v2/";
+    }
+```
+
+## Code snippets NodeJs
+### Send a message to a topic:
 
 **API documentation:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notification-orchestrator/v2/documentation)
 
@@ -86,7 +107,7 @@ async function send(message, topic) {
 }
 send('Hello world', 'topic1');
 ```
-## Create a topic
+### Create a topic
 
 **API documentation:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notification-preference-admin/v2/documentation)
 
