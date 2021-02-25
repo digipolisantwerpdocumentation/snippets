@@ -9,7 +9,7 @@ The Notification Engine is a generic engine to send notifications.
 * [Available channels](#available-channels)
 * [Setup](#setup)
 * [Admin panel](#notification-engine-admin)
-* [Example app .net 5.0](#example-app-net-5-0)
+* [Example app .net 5.0](#example-app-net)
 * [Code snippets NodeJs](#code-snippets-nodejs)
     - [Message to topic](#send-a-message-to-a-topic)
     - [Create a topic](#create-a-topic)
