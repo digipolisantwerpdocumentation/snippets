@@ -4,6 +4,6 @@ namespace NotificationPreferences.Example
     {
         public static string ApiKey = "<YOUR-API-KEY>";
 
-        public static string BaseAddressNotificationPreference = "https://api-gw-o.antwerpen.be/ballistix/notif-preference/v2";
+        public static string BaseAddressNotificationPreference = "https://api-gw-a.antwerpen.be/acpaas/notif-preference/v2";
     }
 }

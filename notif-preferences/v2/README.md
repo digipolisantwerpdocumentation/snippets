@@ -14,7 +14,7 @@ The Notification Engine is a generic engine to send notifications.
 <!--te-->
 
 ## API documentation
-**notification preference:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notificiation-preference/v2/documentation)
+**notification preference:** [Swagger](https://api-store-a.antwerpen.be/#/org/acpaas/api/notificationpreference/v2/documentation)
 
 ## Example app .net
 
