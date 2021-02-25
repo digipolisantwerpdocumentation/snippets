@@ -1,20 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NotificationOrchestrator.Example.Models
 {
     class Program
     {
-        static async void Main(string[] args)
+        static void Main(string[] args)
+        {
+            MainAsync(args).GetAwaiter().GetResult();
+        }
+
+        static async Task MainAsync(string[] args)
         {
             Console.WriteLine("Starting Notification Orchestrator example app");
 
             var apiKey = Config.ApiKey;
 
+            // use different api key if provided via console input
             Console.Write($"Enter your API key ({apiKey}): ");
             var apiKeyInput = Console.ReadLine();
 
-            if (apiKeyInput != "")
+            if (! string.IsNullOrWhiteSpace(apiKeyInput))
             {
                 apiKey = apiKeyInput;
             }
@@ -41,7 +48,7 @@ namespace NotificationOrchestrator.Example.Models
                 }
             };
 
-            var notificationOrchestratorService = new NotificationOrchestratorService(Config.BaseAddress, Config.ApiKey);
+            var notificationOrchestratorService = new NotificationOrchestratorService(Config.BaseAddressOrchestrator, Config.ApiKey);
             var notificationId = await notificationOrchestratorService.SendNotificationToTopicAsync(notification);
 
             Console.WriteLine($"Notification sent, id: { notificationId }");
@@ -55,7 +62,8 @@ namespace NotificationOrchestrator.Example.Models
                 SupportedChannels = { "email" }
             };
 
-            var result = await notificationOrchestratorService.CreateTopicAsync(topic);
+            var notificationPreferenceAdmin = new NotificationPreferenceAdminService(Config.BaseAddressPreferenceAdmin, Config.ApiKey);
+            var result = await notificationPreferenceAdmin.CreateTopicAsync(topic);
         }
     }
 }

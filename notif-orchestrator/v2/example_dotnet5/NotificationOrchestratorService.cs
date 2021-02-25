@@ -35,7 +35,6 @@ namespace NotificationOrchestrator.Example.Models
             return httpClient;
         }
 
-
         public async Task<string> SendNotificationToTopicAsync(Models.Notification notification)
         {
             try
@@ -67,39 +66,6 @@ namespace NotificationOrchestrator.Example.Models
             catch (Exception ex)
             {
                 Console.WriteLine($"NotificationOrchestratorService: Error while sending notification with reference {notification.Reference}: {ex.ToString()}");
-                throw;
-            }
-        }
-
-        public async Task<bool> CreateTopicAsync(Topic topic)
-        {
-            try
-            {
-                Console.WriteLine($"NotificationOrchestratorService create topic {topic.Name}");
-
-                var httpClient = GethttpClient();
-                if (!httpClient.DefaultRequestHeaders.Any(x => x.Key.ToLowerInvariant() == CorrelationHeader.Key.ToLowerInvariant()))
-                {
-                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation(CorrelationHeader.Key, CorrelationHeader.Default);
-                }
-
-                var postContent = new StringContent(JsonConvert.SerializeObject(topic));
-                var response = await httpClient.PostAsync($"topics", postContent);
-
-                var responseContent = await response.Content.ReadAsStringAsync();
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception($"Create topic failed ({(int)response.StatusCode}): {responseContent}");
-                }
-
-                Console.WriteLine($"POST create topic response ({(int)response.StatusCode}): {responseContent}");
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"NotificationOrchestratorService: Error while creating topic {topic.Name}: {ex.ToString()}");
                 throw;
             }
         }

@@ -6,6 +6,7 @@ The Notification Engine is a generic engine to send notifications.
 ### Links:
 
 <!--ts-->
+* [API documentation](#api-documentation)
 * [Available channels](#available-channels)
 * [Setup](#setup)
 * [Admin panel](#notification-engine-admin)
@@ -15,6 +16,10 @@ The Notification Engine is a generic engine to send notifications.
     - [Create a topic](#create-a-topic)
 * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/gettingStarted)
 <!--te-->
+
+## API documentation
+**notification orchestrator:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notification-orchestrator/v2/documentation)
+**notification preference admin:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notification-preference-admin/v2/documentation)
 
 
 ## Available channels:
@@ -47,21 +52,21 @@ Here you can see the sent messages and preferences on your tenant. (You will fir
 
 First configure the base URL and API key in Config.cs:
 
-**.NET Core:**
+**.NET 5.0:**
 
 ```csharp
 public static class Config
     {
         public static string ApiKey = "<YOUR-API-KEY>";
 
-        public static string BaseAddress = "https://api-gw-o.antwerpen.be/ballistix/notif-pref-admin/v2/";
+        public static string BaseAddressPreferenceAdmin = "https://api-gw-o.antwerpen.be/ballistix/notif-pref-admin/v2";
+
+        public static string BaseAddressOrchestrator = "https://api-gw-o.antwerpen.be/ballistix/notif-orchestrator/v2";
     }
 ```
 
 ## Code snippets NodeJs
 ### Send a message to a topic:
-
-**API documentation:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notification-orchestrator/v2/documentation)
 
 ```javascript
 const request = require('request-promise-native');
@@ -108,8 +113,6 @@ async function send(message, topic) {
 send('Hello world', 'topic1');
 ```
 ### Create a topic
-
-**API documentation:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notification-preference-admin/v2/documentation)
 
 ```javascript
 const request = require('request-promise-native');

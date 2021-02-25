@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnetcore\\NotificationOrchestrator.Example.csproj": {}
+    "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnet5\\NotificationOrchestrator.Example.csproj": {}
   },
   "projects": {
-    "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnetcore\\NotificationOrchestrator.Example.csproj": {
+    "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnet5\\NotificationOrchestrator.Example.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnetcore\\NotificationOrchestrator.Example.csproj",
+        "projectUniqueName": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnet5\\NotificationOrchestrator.Example.csproj",
         "projectName": "NotificationOrchestrator.Example",
-        "projectPath": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnetcore\\NotificationOrchestrator.Example.csproj",
+        "projectPath": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnet5\\NotificationOrchestrator.Example.csproj",
         "packagesPath": "C:\\Users\\rc01707\\.nuget\\packages\\",
-        "outputPath": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnetcore\\obj\\",
+        "outputPath": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnet5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

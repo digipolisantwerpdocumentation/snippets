@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "03r86WQ1F+RTz8gLYOR4DRFMPt5Tmmik+lu9Q2QVvhY+mXF90WltyrqLjADtLbRdOXPNSXN6NCx4SBznDwvgTg==",
+  "dgSpecHash": "GcNIY3EcragHclGqMiXFhk94Q/FG5p6AHnbBzPJI3jnk6Cc02H6xNfkjH8rxdiAhHzd/WiYL3EMkj3Id8n0DFw==",
   "success": true,
-  "projectFilePath": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnetcore\\NotificationOrchestrator.Example.csproj",
+  "projectFilePath": "C:\\github\\digipolisantwerpdocumentation\\snippets\\notif-orchestrator\\v2\\example_dotnet5\\NotificationOrchestrator.Example.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.2\\microsoft.extensions.configuration.3.1.2.nupkg.sha512",
     "C:\\Users\\rc01707\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.2\\microsoft.extensions.configuration.abstractions.3.1.2.nupkg.sha512",

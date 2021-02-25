@@ -6,15 +6,37 @@ The Notification Engine is a generic engine to send notifications.
 ### Links:
 
 <!--ts-->
-   * [Get contextpreferences](#get-contextpreferences)
-   * [Create contextpreference](#create-contextpreference)
-   * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-preference-v2/about)
+* [Example app .net](#example-app-net)
+* [Code snippets NodeJs](#code-snippets-nodejs)
+    - [Get contextpreferences](#get-contextpreferences)
+    - [Create contextpreference](#create-contextpreference)
+* [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-preference-v2/about)
 <!--te-->
 
+## API documentation
+**notification preference:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notificiation-preference/v2/documentation)
 
-## Get contextpreferences
+## Example app .net
 
-**API documentation:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notificiation-preference/v2/documentation)
+.net 5.0 code snippets for creating and getting context preferences are available in the sample app: [NotificationPreferencesService.cs (.NET Core)](example_dotnet5/NotificationPreferencesService.cs)
+
+### Setup
+
+First configure the base URL and API key in Config.cs:
+
+**.NET 5.0:**
+
+```csharp
+public static class Config
+    {
+        public static string ApiKey = "<YOUR-API-KEY>";
+
+        public static string BaseAddress = "https://api-gw-o.antwerpen.be/ballistix/notif-pref-admin/v2/";
+    }
+```
+
+## Code snippets NodeJs
+### Get contextpreferences
 
 ```javascript
 const request = require('request-promise-native');
@@ -48,9 +70,7 @@ async function get() {
 get();
 
 ```
-## Create contextpreference
-
-**API documentation:** [Swagger](https://api-store-o.antwerpen.be/#/org/ballistix/api/notificiation-preference/v2/documentation)
+### Create contextpreference
 
 ```javascript
 const request = require('request-promise-native');
