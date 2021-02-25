@@ -9,7 +9,7 @@ The Notification Engine is a generic engine to send notifications.
 * [Available channels](#available-channels)
 * [Setup](#setup)
 * [Admin panel](#notification-engine-admin)
-* [Example app .net core](#example-app-net-core)
+* [Example app .net 5.0](#example-app-net-5-0)
 * [Code snippets NodeJs](#code-snippets-nodejs)
     - [Message to topic](#send-a-message-to-a-topic)
     - [Create a topic](#create-a-topic)
@@ -39,9 +39,9 @@ Here you can see the sent messages and preferences on your tenant. (You will fir
 [Admin panel](https://notif-admin-o.antwerpen.be/) (dev)
 
 
-## Example app .net core
+## Example app .net 5.0
 
-Code snippets for sending a notification and creating a topic are available in the sample app: [NotificationOrchestratorService.cs (.NET Core)](example_dotnetcore/NotificationOrchestratorService.cs)
+Code snippets for sending a notification and creating a topic are available in the sample app: [NotificationOrchestratorService.cs (.NET Core)](example_dotnet5/NotificationOrchestratorService.cs)
 
 ### Setup
 
