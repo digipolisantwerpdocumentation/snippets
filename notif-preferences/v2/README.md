@@ -31,7 +31,7 @@ public static class Config
     {
         public static string ApiKey = "<YOUR-API-KEY>";
 
-        public static string BaseAddress = "https://api-gw-o.antwerpen.be/ballistix/notif-pref-admin/v2/";
+        public static string BaseAddress = "https://api-gw-o.antwerpen.be/ballistix/notif-preference/v2/";
     }
 ```
 
