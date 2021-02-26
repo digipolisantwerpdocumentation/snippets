@@ -4,14 +4,38 @@
 ### Links:
 
 <!--ts-->
-   * [Send sms](#send-sms)
-   * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-preference-v2/about)
+* [Example app .net](#example-app-net)
+* [Code snippets NodeJs](#code-snippets-nodejs)
+    - [Send sms](#send-sms)
+* [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-sms-service-v2/about)
 <!--te-->
 
+## API documentation
+**sms service:** [Swagger](https://api-store-a.antwerpen.be/#/org/acpaas/api/sms-service/v2/documentation)
 
-## Send sms
 
-**API documentation:** [Swagger](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-sms-service-v2/about)
+## Example app .net
+
+.net 5.0 code snippets for sending a sms are available in the sample app: [SmsService.cs (.NET Core)](example_dotnet5/SmsService.cs)
+
+### Setup
+
+First configure the base URL and API key in Config.cs:
+
+**.NET 5.0:**
+
+```csharp
+public static class Config
+    {
+        public static string ApiKey = "<YOUR-API-KEY>";
+
+        public static string BaseAddress = "https://api-gw-a.antwerpen.be/acpaas/sms-service/v2/";
+    }
+```
+
+
+## Code snippets NodeJs
+### Send sms
 
 ```javascript
 const request = require('request-promise-native');
@@ -19,9 +43,9 @@ const correlation = require('astad-dgp-correlation');
 const uuid = require('uuid');
 
 const config = {
-        host: 'https://api-gw-o.antwerpen.be', // Dev endpoint
-        baseUrl: '/ballistix/sms-service/v2',
-        apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-o.antwerpen.be/
+        host: 'https://api-gw-a.antwerpen.be', // Dev endpoint
+        baseUrl: '/acpaas/sms-service/v2',
+        apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-a.antwerpen.be/
 }
 
 async function send() {
