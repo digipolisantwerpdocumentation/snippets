@@ -16,7 +16,7 @@
 
 ## Example app .net
 
-.net 5.0 code snippets for sending a sms are available in the sample app: [SmsService.cs (.NET Core)](example_dotnet5/SmsService.cs)
+.net 5.0 code snippets for sending a sms are available in the sample app: [SmsService.cs (.NET 5.0)](example_dotnet5/SmsService.cs)
 
 ### Setup
 

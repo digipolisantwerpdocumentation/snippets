@@ -4,14 +4,38 @@
 ### Links:
 
 <!--ts-->
-   * [Send email](#send-email)
-   * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-email-service-v2/about)
+* [Example app .net](#example-app-net)
+* [Code snippets NodeJs](#code-snippets-nodejs)
+    - [Send email](#send-email)
+* [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-email-service-v2/about)
 <!--te-->
 
+## API documentation
+**e-mail service:** [Swagger](https://api-store-a.antwerpen.be/#/org/acpaas/api/email-service/v2/documentation)
 
+
+## Example app .net
+
+.net 5.0 code snippets for sending an e-mail are available in the sample app: [EmailService.cs (.NET 5.0)](example_dotnet5/EmailService.cs)
+
+### Setup
+
+First configure the base URL and API key in Config.cs:
+
+**.NET 5.0:**
+
+```csharp
+public static class Config
+    {
+        public static string ApiKey = "<YOUR-API-KEY>";
+
+        public static string BaseAddress = "https://api-gw-a.antwerpen.be/acpaas/email-service/v2/";
+    }
+```
+
+
+## Code snippets NodeJs
 ## Send email
-
-**API documentation:** [Swagger](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-email-service-v2/about)
 
 ```javascript
 const request = require('request-promise-native');
@@ -19,9 +43,9 @@ const correlation = require('astad-dgp-correlation');
 const uuid = require('uuid');
 
 const config = {
-        host: 'https://api-gw-o.antwerpen.be', // Dev endpoint
-        baseUrl: '/ballistix/sms-service/v2',
-        apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-o.antwerpen.be/
+        host: 'https://api-gw-a.antwerpen.be', // Dev endpoint
+        baseUrl: '/acpaas/email-service/v2',
+        apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-a.antwerpen.be/
 }
 
 async function send() {
