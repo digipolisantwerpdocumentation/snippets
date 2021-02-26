@@ -1,0 +1,5 @@
+{
+    "apiKey": "<YOUR-API-KEY>",
+    "baseAddress": "https://api-gw-a.antwerpen.be/acpaas/wcm-content-manager/v3",
+    "tenant": "<YOUR-TENANT>"
+}
