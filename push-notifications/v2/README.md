@@ -6,6 +6,7 @@ The Notification Engine is a generic engine to send notifications.
 ### Links:
 
 <!--ts-->
+* [API documentation](#api-documentation)
 * [Example app .net](#example-app-net)
 * [Code snippets NodeJs](#code-snippets-nodejs)
     - [Send notification](#send-notifications)
@@ -45,9 +46,9 @@ const correlation = require('astad-dgp-correlation');
 const uuid = require('uuid');
 
 const config = {
-        host: 'https://api-gw-o.antwerpen.be', // Dev endpoint
-        baseUrl: '/ballistix/push-notif-service/v2',
-        apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-o.antwerpen.be/
+        host: 'https://api-gw-a.antwerpen.be', // ACC endpoint
+        baseUrl: '/acpaas/push-notif-service/v2',
+        apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-a.antwerpen.be/
 }
 
 async function send() {

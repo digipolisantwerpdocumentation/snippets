@@ -6,6 +6,7 @@ The Notification Engine is a generic engine to send notifications.
 ### Links:
 
 <!--ts-->
+* [API documentation](#api-documentation)
 * [Example app .net](#example-app-net)
 * [Code snippets NodeJs](#code-snippets-nodejs)
     - [Get contextpreferences](#get-contextpreferences)

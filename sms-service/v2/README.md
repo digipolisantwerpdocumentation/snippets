@@ -4,6 +4,7 @@
 ### Links:
 
 <!--ts-->
+* [API documentation](#api-documentation)
 * [Example app .net](#example-app-net)
 * [Code snippets NodeJs](#code-snippets-nodejs)
     - [Send sms](#send-sms)
@@ -43,7 +44,7 @@ const correlation = require('astad-dgp-correlation');
 const uuid = require('uuid');
 
 const config = {
-        host: 'https://api-gw-a.antwerpen.be', // Dev endpoint
+        host: 'https://api-gw-a.antwerpen.be', // ACC endpoint
         baseUrl: '/acpaas/sms-service/v2',
         apiKey: '[xxxxx-xxxxx-xxxxx-xxxxx-xxxxx]' // You can find this in your application on the api-store https://api-store-a.antwerpen.be/
 }
