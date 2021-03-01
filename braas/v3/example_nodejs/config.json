@@ -1,0 +1,6 @@
+{
+    "apiKey": "<YOUR-API-KEY>",
+    "baseAddress": "https://api-gw-a.antwerpen.be/acpaas/braas/v3",
+    "jwt": "<YOUR-JWT>",
+    "applicationId": "97df3524-3675-4240-9ffc-36f2a1bd99b6"
+}
