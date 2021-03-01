@@ -6,14 +6,38 @@ The Notification Engine is a generic engine to send notifications.
 ### Links:
 
 <!--ts-->
-   * [Send notification](#send-notifications)
-   * [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-push-notif-v2/about#/Push32Notifications)
+* [Example app .net](#example-app-net)
+* [Code snippets NodeJs](#code-snippets-nodejs)
+    - [Send notification](#send-notifications)
+* [General info](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-push-notif-v2/about#/Push32Notifications)
 <!--te-->
 
+## API documentation
+**push notification:** [Swagger](https://api-store-a.antwerpen.be/#/org/acpaas/api/push-notification-service/v2/documentation)
 
+
+## Example app .net
+
+.net 5.0 code snippets for sending a push notification are available in the sample app: [PushNotificationService.cs (.NET 5.0)](example_dotnet5/PushNotificationService.cs)
+
+### Setup
+
+First configure the base URL and API key in Config.cs:
+
+**.NET 5.0:**
+
+```csharp
+public static class Config
+    {
+        public static string ApiKey = "<YOUR-API-KEY>";
+
+        public static string BaseAddress = "https://api-gw-a.antwerpen.be/acpaas/push-notif-service/v2/";
+    }
+```
+
+
+## Code snippets NodeJs
 ## Send notification
-
-**API documentation:** [Swagger](https://acpaas.digipolis.be/nl/product/notification-engine/v2.0.0/api-notification-engine-push-notif-v2/about#/Push32Notifications)
 
 ```javascript
 const request = require('request-promise-native');
@@ -44,8 +68,7 @@ async function send() {
 		        	{
             			userId: "aabc54f6d2b2afa8a7dc5d8b4568"
         			},
-    			],
-    			sendAt: "2019-09-05T09:22:00+02:00"
+    			]
     		},
           json: true,
           resolveWithFullResponse: true,
