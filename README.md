@@ -3,7 +3,6 @@
 
 ### Table of contents:
 
-<!--ts-->
    * **Assets**
      * [v1](assets/v1/README.md)
    * **BRaaS**
@@ -18,8 +17,13 @@
      * [v2](eventhandler/v2/README.md)
    * **Event Handler Admin**
      * [v2](eventhandleradmin/v2/README.md)
+   * **Logging**
+     * Application Logging
+       * [v1](applicationlogging/v1/README.md) 
+     * System Logging
+       * [v1](systemlogging/v1/README.md)
    * **Notifications Engine**
-     * Notifications orchestrator 	
+     * Notifications orchestrator
        * [v2](notif-orchestrator/v2/README.md)
      * Notifications preferences
        * [v2](notif-preferences/v2/README.md)
@@ -30,14 +34,14 @@
      * Notifications sms service
        * [v2](sms-service/v2/README.md)
      * Notifications email service
-       * [v2](email-service/v2/README.md)<!--te-->
+       * [v2](email-service/v2/README.md)
    * **Output Generator**
      * [v6](outputgenerator/V6/README.md)
-<!--te-->
-* **ApplicationLogging**
-	* [V1](applicationlogging/v1/README.md) 
-* **SystemLogging**
-	* [V1](systemlogging/v1/README.md) 
+   * **WCM (Web Content Management)**
+     * WCM Content Manager
+       * [v3](wcm/wcm-content-manager/v3/README.md)
+     * WCM Proxy
+       * [v3](wcm/wcm-proxy/v3/README.md)
 
 ## Contributing
 
