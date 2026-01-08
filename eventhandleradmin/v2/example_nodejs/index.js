@@ -14,9 +14,9 @@ const config = require("./config.json");
         const topic = argv.topic || config.topic;
         const subscription = argv.subscription || config.subscription;
 
-        console.log(`Using API key "${apiKey}"`);
-        console.log(`Using namespace owner key "${namespaceOwnerKey}"`);
-        console.log(`Using subscription owner key "${subscriptionOwnerKey}"`);
+        console.log(`Using API key from ${argv.apiKey ? "command line argument" : "configuration"} (value redacted)`);
+        console.log(`Using namespace owner key from ${argv.namespaceOwnerKey ? "command line argument" : "configuration"} (value redacted)`);
+        console.log(`Using subscription owner key from ${argv.subscriptionOwnerKey ? "command line argument" : "configuration"} (value redacted)`);
         console.log(`Using namespace "${namespace}"`);
         console.log(`Using topic "${topic}"`);
         console.log(`Using subscription "${subscription}"`);
