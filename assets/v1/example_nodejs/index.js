@@ -11,7 +11,11 @@ const config = require("./config.json");
 
         const apiKey = argv.apiKey || config.apiKey;
 
-        console.log(`Using API key "${apiKey}"`);
+        const redactedApiKey =
+            typeof apiKey === "string" && apiKey.length > 4
+                ? apiKey.slice(-4)
+                : "<unknown>";
+        console.log(`Using API key ending with "${redactedApiKey}" (redacted)`);
 
         const service = new AssetsService({
             apiKey,
