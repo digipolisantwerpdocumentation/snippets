@@ -10,7 +10,10 @@ const config = require("./config.json");
 
         const apiKey = argv.apiKey || config.apiKey;
 
-        console.log(`Using API key "${apiKey}"`);
+        const maskedApiKey = typeof apiKey === "string" && apiKey.length > 4
+            ? apiKey.slice(0, 2) + "****" + apiKey.slice(-2)
+            : "[redacted]";
+        console.log(`Using API key: ${maskedApiKey}`);
 
         const service = new DigitalAssetsExpressService({
             apiKey,
